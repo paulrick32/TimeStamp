@@ -46,20 +46,15 @@ class ViewController: UIViewController {
         self.view.addSubview(button)
         
         timestamp = defaults.double(forKey: key)
-        
-        if timestamp == 0{
-            label.text = "Botão não foi clicado ainda"
-        }
-        // Do any additional setup after loading the view.
     }
     
     @objc func buttonIsInAction(){
         timestamp = Date().timeIntervalSince1970
         defaults.set(timestamp, forKey: key)
-        let lastTimeWhenButtonWasPressed2 = Date(timeIntervalSince1970: timestamp)
-        let formatter2 = DateFormatter()
-        formatter2.dateFormat = "dd. MMMM yyyy H:mm:ss"
-        let stringFormatter = formatter2.string(from: lastTimeWhenButtonWasPressed2)
+        let lastTimeWhenButtonWasPressed = Date(timeIntervalSince1970: timestamp)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd. MMMM yyyy H:mm:ss"
+        let stringFormatter = formatter.string(from: lastTimeWhenButtonWasPressed)
         
         switch stringFormatter.last! {
         case "1":
