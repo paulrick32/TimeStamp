@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         
         label = UILabel()
         label.frame = CGRect(x: 0, y: 45, width: self.view.frame.width, height: 150)
-        label.text = "Texto Padrão"
+        label.text = "Go 4all"
         label.textAlignment = .center
         label.textColor = UIColor.green
         label.backgroundColor = UIColor.gray
@@ -49,11 +49,6 @@ class ViewController: UIViewController {
         
         if timestamp == 0{
             label.text = "Botão não foi clicado ainda"
-        }else{
-            let lastTimeWhenButtonWasPressed = Date(timeIntervalSince1970: timestamp)
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd. MMMM yyyy H:mm:ss"
-            label.text = formatter.string(from: lastTimeWhenButtonWasPressed)
         }
         // Do any additional setup after loading the view.
     }
@@ -65,10 +60,30 @@ class ViewController: UIViewController {
         let formatter2 = DateFormatter()
         formatter2.dateFormat = "dd. MMMM yyyy H:mm:ss"
         let stringFormatter = formatter2.string(from: lastTimeWhenButtonWasPressed2)
-        if stringFormatter.last! == "0" {
-            label.textColor = UIColor.blue
+        
+        switch stringFormatter.last! {
+        case "1":
+            self.view.backgroundColor = UIColor.yellow
+        case "2":
+            self.view.backgroundColor = UIColor.blue
+        case "3":
+            self.view.backgroundColor = UIColor.white
+        case "4":
+            self.view.backgroundColor = UIColor.red
+        case "5":
+            self.view.backgroundColor = UIColor.purple
+        case "6":
+            self.view.backgroundColor = UIColor.magenta
+        case "7":
+            self.view.backgroundColor = UIColor.black
+        case "8":
+            self.view.backgroundColor = UIColor.brown
+        case "9":
+            self.view.backgroundColor = UIColor.cyan
+        default:
+            self.view.backgroundColor = UIColor.orange
         }
-        label.text = stringFormatter
+        label.text = "Go 4all"
         
         
         
